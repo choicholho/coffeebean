@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+/* header . css */
+
+header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* border-bottom: 1px solid #eee; */
+    box-shadow: 0 6px 10px #d9d9d9;
+    /* -x축 -y축 -블러값 -색상 */
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+/* header 하위 모든 a태그에 적용해 */
+header a {
+    color: #333;
+}
+
+header .header-top {
+    width: 100%;
+    background-color: lightgray;
+    height: 40px;
+    line-height: 40px; /* 글자를 위, 아래 중앙에 두기 위해 사용 */
+}
+
+header .header-top ul {
+    width: 1280px;
+    /* outline: 2px solid blue; */
+    margin: 0 auto;
+    text-align: right; /* li의 부모 요소에 text-align을 적용해야 문단정렬 가능 */
+    
+    
+    
+}
+/* 가로나열 하는데 
+1)공간의 여유가 있을 때 inline-block
+2)부모가 있는 공간이 제한 float */
+header .header-top ul li {
+    float: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+header .header-top ul li:last-child {}
+
+header .header-top ul li:last-child a {
+    width: 60px;
+    height: 40px;
+    background: rgb(47, 28, 17) url(../img/ico_user_info_line.png) no-repeat center;
+
+
+    /* font-size: 0; */
+    /* opacity: 0; 공간을 유지하면서 투명해서 눈에 안 보임 */
+    text-indent: -9999px;
+    text-align: left;
+    
+}
+
+header .header-bottom {
+    /* background-color: yellow; */
+    width: 1280px;
+    margin: 0 auto;
+    height: 100px;
+
+}
+
+header .header-bottom .logo {
+    /* outline: 2px solid blue; */
+    float: left;
+    margin-right: 50px;
+    height: 100%; /* 부모 요소로 높이를 가지겠다. */
+    padding: 15px 0;
+    box-sizing: border-box;
+
+}
+
+header .header-bottom .logo img {
+    height: 70px;
+    display: block;
+}
+
+header .header-bottom .gnb {
+    /* outline: 2px solid blue; */
+    float: left;
+}
+
+header .header-bottom .gnb ul {}
+header .header-bottom .gnb ul li {
+    margin: 0 20px;
+}
+
+header .header-bottom .gnb ul li a {
+    line-height: 100px; /* 라인 높이를 잡아서 위 아래 중앙 정렬하자 */
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase; /* 대문자로 만들기 */
+    color: rgb(47, 28, 17);
+}
+
+header .header-bottom .gnb ul li.active a {
+    color: rgb(207, 102, 26);
+}
+
+header .header-bottom .gnb ul li a:hover {
+    color: rgb(207, 102, 26);
+}
+
+header .header-bottom .search {
+    /* outline: 2px solid blue; */
+    float: right;
+    height: 100%;
+    
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    height: 30px;
+    margin-top: 35px;
+    vertical-align: middle;
+}
+
+.search input[type="search"] {
+    border-bottom: 1px solid #ccc;
+}
+
+.search input[type="submit"] {
+    background: transparent; /* 배경색 빼기 */
+    background-image: url(../img/ico_search.png);
+    background-repeat: no-repeat;
+    background-position: right;
+
+    font-size: 0;
+    width: 24px; /* font-size: 0;으로 하면서 넓이가 없어져서 안 보이니까 넓이를 주자 */
+    cursor: pointer;
+}
